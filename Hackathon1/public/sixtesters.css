@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.title {
+    margin: 0;
+}
+
+.top-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-right input[type="text"] {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.account-holder, .more, .home-button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.subject-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.card:hover {
+    background-color: #ddd;
+}
+
+#subjectDetails {
+    padding: 20px;
+}
+
+.button-container {
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #555;
+}

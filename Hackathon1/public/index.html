@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Prep</title>
+    <link rel="stylesheet" href="sixtesters.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="sixtesters.js"></script>
+</head>
+<body ng-app="examPrepApp" ng-controller="MainController">
+    <header>
+        <h1 class="title">Exam Prep</h1>
+        <div class="top-right">
+            <input type="text" ng-model="searchText" placeholder="Search for subjects...">
+            <span class="account-holder">Account</span>
+            <span class="more">More</span>
+            <button class="home-button" ng-click="showSection('home')">Home</button>
+        </div>
+    </header>
+    <div id="home" ng-show="currentSection === 'home'">
+        <div class="subject-cards">
+            <div class="card" ng-repeat="subject in subjects | filter:searchText" ng-click="showSubjectDetails(subject)">
+                <h3>{{ subject.Subject_name }}</h3>
+            </div>
+        </div>
+    </div>
+    <div id="subjectDetails" ng-show="currentSection === 'subjectDetails'">
+        <h2>{{ selectedSubject.Subject_name }}</h2>
+        <div class="button-container">
+            <button ng-click="showContent('notes')">Notes</button>
+            <button ng-click="showContent('syllabus')">Syllabus</button>
+            <button ng-click="showContent('textbooks')">Textbooks</button>
+            <button ng-click="showContent('previousPapers')">Previous Papers</button>
+        </div>
+        <div id="contentDisplay">
+            <p ng-if="contentType === 'notes'">{{ selectedSubject.Notes }}</p>
+            <p ng-if="contentType === 'syllabus'">{{ selectedSubject.Syllabus }}</p>
+            <p ng-if="contentType === 'textbooks'">{{ selectedSubject.TextBooks }}</p>
+            <p ng-if="contentType === 'previousPapers'">{{ selectedSubject.Previous_year_question_papers }}</p>
+        </div>
+    </div>
+</body>
+</html>
