@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 const pool = mysql.createPool({
     host: 'localhost',
     user: 'root',
-    password: 'Thathagaru@50',
+    password: 'password',
     database: 'project',
     connectionLimit: 10
 });
